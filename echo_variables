@@ -1,8 +1,16 @@
 #!/bin/bash
 
 # Comment text
-
 echo "The current directory is:"
 pwd
 echo "The user logged in is:"
 whoami
+
+# Using variables
+echo "Home for the current user is: $HOME"
+
+# User defined variables
+aya="Aya"
+maria="Maria"
+
+echo "Who are you $aya($maria) Otonashi"
