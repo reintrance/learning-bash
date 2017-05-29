@@ -7,3 +7,12 @@ if [ $val1 -gt $val2 ]
     then echo "$val1 is greater then $val2"
     else echo "$val1 is lesser then $val2"
 fi
+
+# String comparation operators: =, !=, <, >, -n, -z
+# < and > compares by ASCII code
+user=mklechykau
+
+if [ $user = $USER ] 
+    then echo "Specified user is current user"
+    else echo "Specified user isn't current user"
+fi
