@@ -1,0 +1,8 @@
+#!/bin/bash
+
+user=mklechykau
+if grep $user /etc/passwd
+    then echo "The user $user exists"
+elif ls "/home" 
+    then echo "The user $user doesn't exist but has home directory"
+fi
