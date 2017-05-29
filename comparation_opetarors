@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Number comparation opetators: -eq, -ge, -gt, -le, -lt, -ne
+val1=6
+val2=5
+if [ $val1 -gt $val2 ]
+    then echo "$val1 is greater then $val2"
+    else echo "$val1 is lesser then $val2"
+fi
