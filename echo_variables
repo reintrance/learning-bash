@@ -13,4 +13,11 @@ echo "Home for the current user is: $HOME"
 aya="Aya"
 maria="Maria"
 
-echo "Who are you $aya($maria) Otonashi"
+echo "Who are you $aya($maria) Otonashi?"
+
+# Saving execution result to variable
+currentDir=`pwd`
+currentUser=$(whoami)
+
+echo "The current directory is: $currentDir"
+echo "The user logged in is: $currentUser"
