@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Simple for loop
+for var in 1 2 "I'm string" false 5
+do  
+    echo This is $var
+done
+
+# Using comands as source of array
+echo "Contents of this folder are:"
+for var in $(ls .)
+do  
+    echo $var
+done
+
+# Using custom field separator separator. Default separators: space, tab, newline
+echo "Users of this OS:"
+file="/etc/passwd"
+IFS=$'\n'
+for var in $(cat $file)
+do  
+    echo $var
+done
