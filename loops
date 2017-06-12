@@ -40,5 +40,70 @@ done
 echo "--------------------------------"
 for (( i=1; i<=10; i++ ))
 do
-    echo "Current number $i"
+    echo "Current number is $i"
 done
+
+# While loop
+echo "--------------------------------"
+var1=10
+while [ $var1 -gt 0 ]
+do
+    echo "Current number is $var1"
+    var1=$[ $var1 - 1 ]
+done
+
+# Nested loops
+echo "--------------------------------"
+for (( i=1; i<=3; i++ ))
+do
+    echo "Outer $i"
+    for (( j=1; j<=3; j++ ))
+    do
+        echo "Outer $i Inner $j"
+    done
+done
+
+# Continue and break
+echo "--------------------------------"
+for (( i=1; i<=3; i++ ))
+do
+    echo "Outer $i"
+    for (( j=1; j<=3; j++ ))
+    do
+        if [ $j -eq 2 ]
+            then continue
+        fi
+        echo "Outer $i Inner $j"
+    done
+
+    if [ $i -eq 2 ]
+        then break
+    fi
+done
+
+# Piping result
+echo "--------------------------------"
+logFile="nested.log"
+for (( i=1; i<=3; i++ ))
+do
+    echo "Outer $i"
+    for (( j=1; j<=3; j++ ))
+    do
+        echo "Outer $i Inner $j"
+    done
+done > $logFile
+
+# Example: listing executable files
+echo "--------------------------------"
+executableListFile="executableFiles.txt"
+IFS=:
+for folder in $PATH
+do
+    echo "$folder contains:"
+    for file in $folder/*
+    do
+        if [ -x $file ]
+            then echo " $file"
+        fi
+    done
+done > $executableListFile
