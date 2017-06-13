@@ -2,13 +2,14 @@
 
 # Accessing parameters. Parameters that are over nine should be used ad ${10}
 
-echo "Executed script: $0"
-# [] and [[]] are used for test expression [[]] is more modern and allows conditions like && || instead of -a and -o in []
-if [ -n $1 && -n $2 ]
-    then
-        echo "First parameter: $1"
-        echo "Second parameter: $2"
-        echo "Summ: $[ $1 + $2 ]"
-    else 
-        echo "Please specify parameters"
-fi
+    echo "Executed script: $0"
+    # [] and [[]] are used for test expression [[]] is more modern and allows conditions like && || instead of -a and -o in []
+    if [ -n "$1" ] && [ -n "$2" ]
+        then
+            echo "First parameter: $1"
+            echo "Second parameter: $2"
+            echo "Summ: $[ $1 + $2 ]"
+        else 
+            # With $# you can count number of passed parameters
+            echo "You specified $# parameters but script needs 2. Please specify other parameters"
+    fi
