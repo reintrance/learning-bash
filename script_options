@@ -7,7 +7,14 @@ do
         -a) echo "Found the -a option";;
         -b) echo "Found the -b option";;
         -c) echo "Found the -c option";;
-        *) echo "$1 is not an option";;
+        # Usually -- used to mark end of options and start of parameters
+        --) shift; break;
     esac
     shift
+done
+count=1
+echo "params $@"
+for param in "$@"
+do
+    echo "Parameter #$count: $param"
 done
