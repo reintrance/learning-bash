@@ -1,5 +1,15 @@
 #!/bin/bash
 
 echo -n "Enter your name: "
-read name
-echo "Hello $name, welcome to hell!"
+if read -t 5 name
+    then
+        echo "Hello $name, welcome to hell!"
+        # Use -s option with read to not display entered data while typing.
+        read -p "Enter two names of your friends: " friend1 friend2
+        echo "Sending message to them: \"$friend1 and $friend2 - You are next!\""
+        # If no params specified places it into $REPLY
+        read -p "Enter your feedback: "
+        echo "Your feedback is: $REPLY"
+    else
+        echo "Slowpoke...."
+fi
