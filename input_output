@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Redirect result to file overriding current file content
+pwd > myfile
+
+# Redirect result to a file adding to the end of content
+ls >> myfile
+
+# Redirect error message, 2 is default error file descriptor
+ls -l nonexistentfile 2>errors.log
