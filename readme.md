@@ -1,7 +1,7 @@
 # Learning Bash Materials
 
 ## Using options
--- is a stadard for separation of options and parameters
+-- is a standard for separation of options and parameters
 
 ### Standard for naming options:
 -a            Shows all objects
@@ -35,3 +35,8 @@
 -x            Excludes an object
 
 -y            Answers yes to all questions
+
+### IO file descriptors:
+0 - STDIN
+1 - STDOUT
+2 - STDERR
