@@ -8,3 +8,13 @@ ls >> myfile
 
 # Redirect error message, 2 is default error file descriptor
 ls -l nonexistentfile 2>errors.log
+
+# Redirect output for success and error comand executiong result at the same time
+ls myfile xfile anotherfile 2>errors.log 1>result.log
+
+# Redirect both STDERR and STDOUT to the same file
+ls myfile xfile anotherfile &>result.log
+
+# &# means temporary redirection, so &2 is temporary redirection to STDERR
+echo "This is an error" >&2
+echo "This is normal output"
