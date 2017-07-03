@@ -18,3 +18,6 @@ ls myfile xfile anotherfile &>result.log
 # &# means temporary redirection, so &2 is temporary redirection to STDERR
 echo "This is an error" >&2
 echo "This is normal output"
+
+# Suppressing command output
+ls -al xfile nonexistentfile 2>/dev/null
