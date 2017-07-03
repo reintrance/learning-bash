@@ -1,0 +1,19 @@
+#!/bin/bash
+
+exec 6<&0
+exec 0<errors.log
+
+count=0
+while read line
+do
+    echo "Lin #$count is '$line'"
+    count=$(( $count + 1))
+done
+
+# Reset STDIN to console
+exec 0<&6
+read -p "Are you done?" answer
+case $answer in
+    y) echo "Bye!";;
+    n) echo "Sorry then...";;
+esac
