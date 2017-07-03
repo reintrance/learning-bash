@@ -1,0 +1,7 @@
+#!/bin/bash
+
+exec 3>customoutput.log
+
+echo "This is just an output to console"
+echo "This is error" >&2
+echo "This is message for custom output descriptor" >&3
