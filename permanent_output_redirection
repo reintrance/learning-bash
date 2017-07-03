@@ -1,0 +1,9 @@
+#!/bin/bash
+
+exec 1>result.log
+exec 2>error.log
+
+echo "This is simple output"
+echo "This is another output"
+echo "This is error message" >&2
+echo "This is output after error"
